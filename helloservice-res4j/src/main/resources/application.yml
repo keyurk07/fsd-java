@@ -1,0 +1,29 @@
+#spring.application.name=helloservice
+
+spring:
+ application:
+  name:
+   helloservice
+
+#eureka.client.register-with-eureka=true
+#eureka.client.fetch-registry=true
+
+#eureka:
+# client:
+#    register-with-eureka: true
+#    fetch-registry: true
+#    service-url:
+#     defaultZone: http://localhost:8761/eureka/
+# instance:
+#  hostname: localhost
+#  instance-id: "${spring.application.name}:${instanceId:${random.value}}"
+    
+    
+#eureka.client.service-url=http://localhost:8761
+#eureka.client.service-url.defaultZone=http://localhost:8761/eureka/
+server:
+ port: 8091
+
+#eureka.instance.hostname=localhost
+#eureka.instance.instance-id=
+#"${spring.application.name}:${instanceId:${random.value}}"

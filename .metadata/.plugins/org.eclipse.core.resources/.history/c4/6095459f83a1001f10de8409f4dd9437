@@ -1,0 +1,14 @@
+package com.calculator;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestCalculatorDiv {
+
+	@Test
+	void testDivide() {
+		fail("Not yet implemented");
+	}
+
+}

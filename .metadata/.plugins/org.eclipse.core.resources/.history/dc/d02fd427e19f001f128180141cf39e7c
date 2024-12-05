@@ -1,0 +1,4 @@
+spring.application.name=MA-Eureka-Registry
+
+server.port=8761
+

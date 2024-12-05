@@ -1,0 +1,5 @@
+package com.ust.identityProvider.entity;
+
+public class UserCredential {
+
+}

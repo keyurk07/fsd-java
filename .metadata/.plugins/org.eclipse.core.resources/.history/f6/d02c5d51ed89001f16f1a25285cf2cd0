@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: cloudgatewayloadbalancer
+  cloud:
+    gateway:
+     discovery: 
+      locator:
+       enable: true 
+     routes:
+       - id: cloudgatewayloadbalancer-route
+         uri: lb://helloservice   # lb uses round robin to balance load
+         predicates:
+          - Path=/helloservice/**
+         filters:
+          - name: CircuitBreaker # default filter name
+            args:
+              name: helloServiceCircuitBreaker
+              fallbackUri: forward:/myfallback
+           
+server:
+  port: 8072
+  
+management:
+ endpoint:
+  gateway:
+   enabled: true
+  health:
+    show-details: always
+    circuitbreakers:
+    enabled: true 
+ endpoints:
+  web: 
+   exposure: 
+    include: health
+  
+    

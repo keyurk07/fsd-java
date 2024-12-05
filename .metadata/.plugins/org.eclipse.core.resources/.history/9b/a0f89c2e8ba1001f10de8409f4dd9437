@@ -1,0 +1,47 @@
+package com.ust.rest.repository;
+
+import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.test.annotation.Rollback;
+
+import com.ust.rest.model.Product;
+
+@DataJpaTest
+@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
+public class ProductRepositoryTest {
+	
+	@Autowired
+	ProductRepository repository;
+	
+	@Test
+	@Order(1)
+	@Rollback(value = false)
+	public void saveProductTest() {
+		Product product = Product.builder()
+				.id(1)
+				.brand("Van Hussain")
+				.description("Smart Digital Mobile Phone")
+				.qty(20)
+				.price(20000)
+				.build();
+		repository.save(product);
+				
+	}
+	
+	@Test
+	@Order(2)
+	public void getProductTest() {
+		
+//		Action
+		Product product = repository.findById(1L).get();
+//		Verify
+		System.out.println(product);
+		Assertions.assertThat(product.getId()).isEqualTo(1L);
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.calculator;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestCalculatorSub {
+
+	@Test
+	void testSub() {
+		fail("Not yet implemented");
+	}
+
+}

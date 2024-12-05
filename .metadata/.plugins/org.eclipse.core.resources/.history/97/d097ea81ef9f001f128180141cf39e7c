@@ -1,0 +1,5 @@
+package com.ust.identityProvider.repository;
+
+public interface UserCredentialRepository {
+
+}

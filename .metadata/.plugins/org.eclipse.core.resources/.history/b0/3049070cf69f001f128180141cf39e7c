@@ -1,0 +1,46 @@
+
+server:
+  port: 9898
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - gateway
+
+
+spring:
+  application:
+    name: MA-cloud-gateway
+
+  cloud:
+    gateway:
+      routes:
+        - id: microservice-1
+          uri: lb://MA-MICROSERVICE-1
+          predicates:
+            - Path=m1/**
+          filters:
+            - AuthenticationFilter
+            
+        - id: microservice-2
+          uri: lb://MA-MICROSERVICE-2
+          predicates:
+            - Path=/microservice2/**
+          filters:
+            - AuthenticationFilter 
+            
+        - id: identity-provider
+          uri: lb://MA-IDENTITY-PROVIDER
+          predicates:
+            - Path=/auth/**

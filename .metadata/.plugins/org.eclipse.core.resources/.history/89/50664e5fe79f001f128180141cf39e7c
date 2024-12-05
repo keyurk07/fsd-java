@@ -1,0 +1,13 @@
+package com.ust.cloudGatewawy;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class MaCloudGatewayApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(MaCloudGatewayApplication.class, args);
+	}
+
+}

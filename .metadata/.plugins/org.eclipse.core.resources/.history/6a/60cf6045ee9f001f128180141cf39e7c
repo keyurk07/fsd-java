@@ -1,0 +1,5 @@
+package com.ust.identityProvider.config;
+
+public class AuthConfig {
+
+}

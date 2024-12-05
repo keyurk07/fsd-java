@@ -1,0 +1,15 @@
+spring.application.name=MA-cloud-gateway
+server.port=9898
+
+eureka.client.register-with-eureka=true
+eureka.client.fetch-registry=true
+eureka.client.serviceUrl.defaultZone= http://localhost:8761/eureka/
+eureka.instance.hostname= localhost
+
+spring.cloud.gateway.enabled=true
+management.emdpoints.web.exposure.include=gateway
+
+#spring.cloud.gateway.routes[0].id=microservice-1
+#spring.cloud.gateway.routes[0].uri=lb://MA-MICROSERVICE-1
+#spring.cloud.gateway.routes[0].predicates[0]
+

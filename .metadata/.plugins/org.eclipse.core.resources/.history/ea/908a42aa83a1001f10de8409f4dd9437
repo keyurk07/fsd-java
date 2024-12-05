@@ -1,0 +1,14 @@
+package com.calculator;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+class TestCalculatorMul {
+
+	@Test
+	void testMultiply() {
+		fail("Not yet implemented");
+	}
+
+}
